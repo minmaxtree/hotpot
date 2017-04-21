@@ -1,0 +1,13 @@
+Go channels are bad and you should feel bad
+
+Update: this blog post would probably be entirely different if Go issue #14601 is implemented.
+
+Update 2: If you’re coming to this blog post from a compendium titled “Go is not good,” I want to make it clear that I am ashamed to be on such a list. Go is absolutely the least worst programming language I’ve ever used. At the time I wrote this, I wanted to curb a trend I was seeing, namely, overuse of one of the more warty parts of Go. I still think channels could be much better, but overall, Go is wonderful. It’s like if your favorite toolbox had this in it; the tool can have uses (even if it could have had more uses), and it can still be your favorite toolbox!
+
+I’ve been using Google’s Go programming language on and off since mid-to-late 2010, and I’ve had legitimate product code written in Go for Space Monkey since January 2012 (before Go 1.0!). My initial experience with Go was back when I was researching Hoare’s Communicating Sequential Processes model of concurrency and the π-calculus under Matt Might’s UCombinator research group as part of my (now redirected) PhD work to better enable multicore development. Go was announced right then (how serendipitous!) and I immediately started kicking tires.
+
+It quickly became a core part of Space Monkey development. Our production systems at Space Monkey currently account for over 425k lines of pure Go (not counting all of our vendored libraries, which would make it just shy of 1.5 million lines), so not the most Go you’ll ever see, but for the relatively young language we’re heavy users. We’ve written about our Go usage before. We’ve open-sourced some fairly heavily used libraries; many people seem to be fans of our OpenSSL bindings (which are faster than crypto/tls, but please keep openssl itself up-to-date!), our error handling library, logging library, and metric collection library/zipkin client. We use Go, we love Go, we think it’s the least bad programming language for our needs we’ve used so far.
+
+Although I don’t think I can talk myself out of mentioning my widely avoided goroutine-local-storage library here either (which even though it’s a hack that you shouldn’t use, it’s a beautiful hack), hopefully my other experience will suffice as valid credentials that I kind of know what I’m talking about before I explain my deliberately inflamatory post title.
+
+----
